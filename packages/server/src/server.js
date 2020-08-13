@@ -41,7 +41,7 @@ async function createApp(options) {
 
   // 1. Support large payloads because LHRs are big.
   // 2. Support JSON primitives because `PUT /builds/<id>/lifecycle "sealed"`
-  app.use(bodyParser.json({limit: '10mb', strict: false}));
+  app.use(bodyParser.json({limit: '50mb', strict: false}));
 
   // The entire server can be protected by HTTP Basic Authentication
   const authMiddleware = createBasicAuthMiddleware(context);
